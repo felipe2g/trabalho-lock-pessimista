@@ -13,6 +13,5 @@ public class Conta {
     private Long id;
     private String numeroConta;
     private BigDecimal saldo;
-    @Version
     private int versao;
 }
