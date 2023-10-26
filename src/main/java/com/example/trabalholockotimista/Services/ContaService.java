@@ -16,7 +16,6 @@ public class ContaService {
     private ContaRepository contaRepository;
 
     @Transactional
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Conta sacar(String numeroConta, BigDecimal valor) throws Exception {
         Conta conta = contaRepository.findByNumeroConta(numeroConta);
 
@@ -34,7 +33,6 @@ public class ContaService {
     }
 
     @Transactional
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Conta depositar(String numeroConta, BigDecimal valor) throws Exception {
         Conta conta = contaRepository.findByNumeroConta(numeroConta);
         if (conta == null) {
